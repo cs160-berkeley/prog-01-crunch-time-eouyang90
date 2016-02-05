@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">Crunch Time</string>
+    <string name="action_settings">Settings</string>
+    <string-array name="exercises_array">
+        <item>Push-ups</item>
+        <item>Sit-ups</item>
+        <item>Squats</item>
+        <item>Leg-lifts</item>
+        <item>Planking</item>
+        <item>Jumping jacks</item>
+        <item>Pull-ups</item>
+        <item>Cycling</item>
+        <item>Walking</item>
+        <item>Jogging</item>
+        <item>Swimming</item>
+        <item>Stair climbing</item>
+    </string-array>
+    <integer-array name="exercises_num">
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </integer-array>
+    <integer-array name="exercises_conversion">
+        <item>350</item>
+        <item>200</item>
+        <item>225</item>
+        <item>25</item>
+        <item>25</item>
+        <item>10</item>
+        <item>100</item>
+        <item>12</item>
+        <item>20</item>
+        <item>12</item>
+        <item>13</item>
+        <item>15</item>
+    </integer-array>
+    <string-array name="exercises_types">
+        <item>reps are</item>
+        <item>reps are</item>
+        <item>reps are</item>
+        <item>minutes is</item>
+        <item>minutes is</item>
+        <item>minutes is</item>
+        <item>reps are</item>
+        <item>minutes is</item>
+        <item>minutes is</item>
+        <item>minutes is</item>
+        <item>minutes is</item>
+        <item>minutes is</item>
+    </string-array>
+</resources>
