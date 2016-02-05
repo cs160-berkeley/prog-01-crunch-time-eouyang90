@@ -15,7 +15,7 @@
         <item>Swimming</item>
         <item>Stair climbing</item>
     </string-array>
-    <integer-array name="exercises_num">
+    <string-array name="exercises_num">
         <item>0</item>
         <item>0</item>
         <item>0</item>
@@ -28,7 +28,7 @@
         <item>0</item>
         <item>0</item>
         <item>0</item>
-    </integer-array>
+    </string-array>
     <integer-array name="exercises_conversion">
         <item>350</item>
         <item>200</item>
@@ -57,4 +57,19 @@
         <item>minutes is</item>
         <item>minutes is</item>
     </string-array>
+    <string-array name="exercises_types2">
+        <item>reps of</item>
+        <item>reps of</item>
+        <item>reps of</item>
+        <item>min of</item>
+        <item>min of</item>
+        <item>min of</item>
+        <item>reps of</item>
+        <item>min of</item>
+        <item>min of</item>
+        <item>min of</item>
+        <item>min of</item>
+        <item>min of</item>
+    </string-array>
+    <color name="white">#FFFFFF</color>
 </resources>

@@ -1,29 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:background="@drawable/stroke"
     android:padding="5dp" >
 
     <ImageView
         android:id="@+id/grid_image"
-        android:layout_width="50dp"
-        android:layout_height="50dp">
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:paddingLeft="5dp">
     </ImageView>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:paddingLeft="5dp">
+        <TextView
+            android:id="@+id/grid_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp" >
+        </TextView>
 
-    <TextView
-        android:id="@+id/grid_num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:textSize="12sp" >
-    </TextView>
-
+        <TextView
+            android:id="@+id/grid_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:textSize="12sp" >
+        </TextView>
+    </LinearLayout>
     <TextView
         android:id="@+id/grid_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:textSize="9sp" >
+        android:paddingLeft="5dp"
+        android:textSize="12sp" >
     </TextView>
 </LinearLayout>

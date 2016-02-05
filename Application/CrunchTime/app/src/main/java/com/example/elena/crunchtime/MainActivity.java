@@ -8,7 +8,9 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -17,7 +19,6 @@ import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Arrays;
 
@@ -26,6 +27,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getWindow().setSoftInputMode(
+                WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN
+        );
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -36,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
         gridview.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                Toast.makeText(MainActivity.this, "" + position,
-                        Toast.LENGTH_SHORT).show();
+//                Toast.makeText(MainActivity.this, "" + position,
+//                        Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -53,8 +58,8 @@ public class MainActivity extends AppCompatActivity {
         OnItemSelectedListener spinnerListener = new OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id){
                 String text = parent.getItemAtPosition(pos).toString();
-                Toast.makeText(parent.getContext(),
-                        "OnItemSelectedListener : " + text,Toast.LENGTH_SHORT).show();
+//                Toast.makeText(parent.getContext(),
+//                        "OnItemSelectedListener : " + text,Toast.LENGTH_SHORT).show();
                 updateVals(MainActivity.this);
                 updateType(MainActivity.this);
             }
@@ -69,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
         etValue.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
                     updateVals(MainActivity.this);
                     return true;
@@ -95,12 +102,21 @@ public class MainActivity extends AppCompatActivity {
         String userExercise = mySpinner.getSelectedItem().toString();
         int index = Arrays.asList(text).indexOf(userExercise);
 
+        //updates the calorie count
         int[] conversion = res.getIntArray(R.array.exercises_conversion);
         int newCals = 100*val/conversion[index];
         TextView cals = (TextView) findViewById(R.id.numCals);
         Log.d("Blah", Integer.toString(conversion[index]));
         cals.setText(Integer.toString(newCals));
 
+
+        //updates the reps for the other exercises
+        GridView gridview = (GridView) findViewById(R.id.gridview);
+        ImageAdapter gridAdapter = (ImageAdapter) gridview.getAdapter();
+        for (int i = 0; i < conversion.length; i++){
+            gridAdapter.updateNums(i, newCals);
+        }
+        gridAdapter.notifyDataSetChanged();
     }
 
     //updates the 'reps is' or 'minutes are' aspect of the view
