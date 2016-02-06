@@ -14,8 +14,11 @@ See the [Crunch Time demo] (https://vimeo.com/154378299) here
 ## Screenshots
 
 <img src="screenshots/main.png" height="400" alt="Screenshot"/>
-<img src="screenshots/dropdown.png" height="400" alt="Screenshot"/>
+
+!<img src="screenshots/dropdown.png" height="400" alt="Screenshot"/>
+
 <img src="screenshots/repInput.png" height="400" alt="Screenshot"/>
+
 <img src="screenshots/result.png" height="400" alt="Screenshot"/>
 
 ## Acknowledgments
