@@ -51,7 +51,6 @@ public class ImageAdapter extends BaseAdapter {
         LayoutInflater inflater = (LayoutInflater) mContext
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-//        if (convertView == null) {
             grid = new View(mContext);
             grid = inflater.inflate(R.layout.grid_single, null);
             //put in exercise name
@@ -65,9 +64,6 @@ public class ImageAdapter extends BaseAdapter {
             textView.setText(mtext[position]);
             textNumView.setText(mtextNum[position]);
             imageView.setImageResource(mThumbIds[position]);
-//        } else {
-//            grid = (View) convertView;
-//        }
 
         return grid;
     }

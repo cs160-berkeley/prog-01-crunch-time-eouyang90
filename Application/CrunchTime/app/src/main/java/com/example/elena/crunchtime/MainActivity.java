@@ -5,7 +5,6 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -41,8 +40,6 @@ public class MainActivity extends AppCompatActivity {
         gridview.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-//                Toast.makeText(MainActivity.this, "" + position,
-//                        Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -58,8 +55,6 @@ public class MainActivity extends AppCompatActivity {
         OnItemSelectedListener spinnerListener = new OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id){
                 String text = parent.getItemAtPosition(pos).toString();
-//                Toast.makeText(parent.getContext(),
-//                        "OnItemSelectedListener : " + text,Toast.LENGTH_SHORT).show();
                 updateVals(MainActivity.this);
                 updateType(MainActivity.this);
             }
@@ -106,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
         int[] conversion = res.getIntArray(R.array.exercises_conversion);
         int newCals = 100*val/conversion[index];
         TextView cals = (TextView) findViewById(R.id.numCals);
-        Log.d("Blah", Integer.toString(conversion[index]));
         cals.setText(Integer.toString(newCals));
 
 
